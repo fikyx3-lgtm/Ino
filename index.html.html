@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INO 610</title>
+
+</head>
+
+<body>
+    <!--<nav class="main-nav">
+        <div class="nav-logo">
+            <a href="Längsstabrost_new.html">
+                <span class="logo-red">Red</span><span class="logo-gray">.aco</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li class="has-submenu">
+                <a href="#">Rošty</a>
+                <ul class="submenu">
+                    <li><a href="Längsstabrost_new.html">Längsstabrost</a></li>
+                    <li><a href="Weldless.html">Weldless</a></li>
+                    <li><a href="Mesh_33x11.html">Mesh 33x11</a></li>
+
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Žlaby</a>
+                <ul class="submenu">
+                    <li><a href="Ino610.html">Ino610</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="#">Others</a></li>
+        </ul>
+    </nav>-->
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="container-title">INO610</div>
+            <div class="selects-with-image">
+                <div class="selects-column">
+
+                    <!--<div class="form-section">
+                    <div class="form-section-title">Channel settings</div>-->
+
+                    <div class="form-field">
+                        <select id="material" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="118">1.0037</option>
+                            <option value="123">1.4301</option>
+                            <option value="168">1.4404</option>
+                        </select>
+                        <label for="material">Material</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+                    <div class="form-field">
+                        <select id="thickness" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="118">1,5mm</option>
+                            <option value="123">2mm</option>
+                        </select>
+                        <label for="surface">Material thickness</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+                    <div class="form-field input-range">
+                        <label for="channel-width">Channel width Wi [mm]</label>
+                        <div class="input-floating-wrapper">
+                            <div class="input-bound">80</div>
+                            <input type="number" id="channel-width" min="80" max="300">
+                            <div class="input-bound">300</div>
+                        </div>
+                    </div>
+
+                    <div class="form-field input-range">
+                        <label for="channel-length">Channel internal length [mm]</label>
+                        <div class="input-floating-wrapper">
+                            <div class="input-bound">300</div>
+                            <input type="number" id="channel-length" min="300" max="50 000">
+                            <div class="input-bound">50 000</div>
+                        </div>
+                    </div>
+
+                    <div class="form-field input-range">
+                        <label for="channel-height">Channel height [mm]</label>
+                        <div class="input-floating-wrapper">
+                            <div class="input-bound">60</div>
+                            <input type="number" id="channel-height" min="60" max="250">
+                            <div class="input-bound">250</div>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <select id="Height" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="20,5">20,5</option>
+                            <option value="30,5">30,5</option>
+                            <option value="40,5">40,5</option>
+                        </select>
+                        <label for="surface">Height of grating [mm]</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+
+
+                    <div class="radio-group-vertical">
+                        <div class="radio-label">Grating</div>
+                        <div class="radio-options-inline">
+                            <label class="radio-option">
+                                <input type="radio" id="grating-yes" name="locking" value="yes">
+                                <span class="custom-radio"></span>
+                                Yes
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" id="grating-no" name="locking" value="no" checked>
+                                <span class="custom-radio"></span>
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div id="grating-options" style="display: none;">
+
+                        <div class="form-field">
+                            <select id="grating-type" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="mesh">Mesh</option>
+                                <option value="ladder">Längsstabrost</option>
+                            </select>
+                            <label for="grating-type">Grating type</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div id="mesh-size-wrapper" class="form-field" style="display: none;">
+                            <select id="mesh-size" required>
+                                <option value="" disabled selected hidden></option>>
+                                <option value="33x11">33x11</option>
+                            </select>
+                            <label for="mesh-size">Mesh size</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div id="mesh-surface-wrapper" class="form-field" style="display: none;">
+                            <select id="mesh-surface" required>
+                                <option value="" disabled selected hidden></option>>
+                                <option value="antislip">Antislip</option>
+                                <option value="antislip">Simple antislip</option>
+                                <option value="plain">Plain</option>
+                            </select>
+                            <label for="surface">Surface</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div id="ladder-thickness-wrapper" class="form-field" style="display: none;">
+                            <select id="mesh-thick" required>
+                                <option value="" disabled selected hidden></option>>
+                                <option value="20x2">20x2</option>
+                                <option value="20x3">20x3</option>
+                                <option value="20x3">30x2</option>
+                                <option value="20x3">30x3</option>
+                                <option value="20x3">40x2</option>
+                                <option value="20x3">40x3</option>
+                            </select>
+                            <label for="mesh-thick">Ladder thickness</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+
+                        <div id="ladder-type-wrapper" class="form-field" style="display: none;">
+                            <select id="ladder-size" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="15x3">15x3</option>
+                                <option value="15x5">15x5</option>
+                                <option value="15x5">20x3</option>
+                                <option value="15x5">20x5</option>
+                            </select>
+                            <label for="ladder-size">Ladder thickness</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+
+                        <div id="ladder-surface-wrapper" class="form-field" style="display: none;">
+                            <select id="ladder-surface" required>
+                                <option value="" disabled selected hidden></option>>
+                                <option value="antislip">Antislip</option>
+                                <option value="plain">Plain</option>
+                            </select>
+                            <label for="surface">Surface</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <!--<div class="form-field">
+                            <select id="surface" required>
+                                <option value="" disabled selected hidden></option>>
+                                <option value="antislip">Antislip</option>
+                                <option value="antislip">Simple antislip</option>
+                                <option value="plain">Plain</option>
+                            </select>
+                            <label for="surface">Surface</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>-->
+
+                        <div class="radio-group-vertical">
+                            <div class="radio-label">Locking</div>
+                            <div class="radio-options-inline">
+                                <label class="radio-option">
+                                    <input type="radio" id="locking-yes" name="locking" value="yes">
+                                    <span class="custom-radio"></span>
+                                    Yes
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" id="locking-no" name="locking" value="no" checked>
+                                    <span class="custom-radio"></span>
+                                    No
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="locking-options" class="form-field" style="display: none;">
+                            <div class="form-field">
+                                <select id="locking-type" required>
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="m8">M8</option>
+                                    <option value="m6">M6</option>
+                                </select>
+                                <label for="locking-type">Locking size</label>
+                                <span class="dropdown-icon">▾</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="radio-group-vertical">
+                        <div class="outlet">Outlet</div>
+                        <div class="radio-options-inline">
+                            <label class="radio-option">
+                                <input type="radio" id="outlet-yes" name="outlet" value="yes">
+                                <span class="custom-radio"></span>
+                                Yes
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" id="outlet-no" name="outlet" value="no" checked>
+                                <span class="custom-radio"></span>
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="outlet-options" style="display: none;">
+
+                        <div class="form-field">
+                            <select id="outlet tpye" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="pipe">Pipe</option>
+                                <option value="sump unit">Sump unit</option>
+                            </select>
+                            <label for="outlet-diameter">Type of outlet</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div class="form-field">
+                            <select id="outlet-type" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="vertical">Vertical</option>
+                                <option value="horizontal">Horizontal</option>
+                            </select>
+                            <label for="outlet-type">Outlet Type</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div class="form-field">
+                            <select id="outlet diameter" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="D110">D110</option>
+                                <option value="D75">D75</option>
+                                <option value="D50">D50</option>
+                            </select>
+                            <label for="outlet-diameter">Outlet diameter</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div class="form-field" id="outlet-direction-wrapper">
+                            <select id="outlet-direction" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="front">Front</option>
+                                <option value="rear">Rear</option>
+                            </select>
+                            <label for="outlet-direction">Outlet direction</label>
+                            <span class="dropdown-icon">▾</span>
+                        </div>
+
+                        <div class="form-field input-range">
+                            <label for="channel-length">Number of outlets</label>
+                            <div class="input-floating-wrapper">
+                                <div class="input-bound">1</div>
+                                <input type="number" id="outlet-count" min="1" max="6">
+                                <div class="input-bound">6</div>
+                            </div>
+                        </div>
+
+                        <!-- Tady se budou zobrazovat pozice výpustí -->
+                        <div class="form-field" id="outlet-positions"></div>
+
+                    </div>
+
+
+                    <div class="form-field">
+                        <select id="endCap" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="none">No</option>
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                            <option value="both">Both sides</option>
+                        </select>
+                        <label for="endCap">End Caps</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+                    <div class="form-field" id="endCap-type-wrapper">
+                        <select id="endCap-type" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="welded">Welded</option>
+                            <option value="free">Free</option>
+                            <option value="point-welded">Point welded</option>
+                        </select>
+                        <label for="endCap-type">End Caps type</label>
+                        <span class="dropdown-icon">▾</span>
+
+                    </div>
+
+                    <div class="form-field">
+                        <select id="perforation" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="vertical">No</option>
+                            <option value="horizontal">Side</option>
+                            <option value="horizontal">Both sides</option>
+                        </select>
+                        <label for="perforation">Pefrofation</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+                    <div class="form-field">
+                        <select id="transport-connection" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="noTF">No TF</option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
+                            <option value="3000">3000</option>
+                            <option value="6000">6000</option>
+                        </select>
+                        <label for="transport-connection">Length of TF [mm]</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+                    <div class="form-field" id="connection-type-field" style="display: none;">
+                        <select id="transport-connection-type" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="plate">Plate</option>
+                            <option value="bolted">Bolted</option>
+                        </select>
+                        <label for="transport-connection-type">Connection type</label>
+                        <span class="dropdown-icon">▾</span>
+                    </div>
+
+
+                    <div class="radio-group-vertical">
+                        <div class="radio-label">Completion</div>
+                        <div class="radio-options-inline">
+                            <label class="radio-option">
+                                <input type="radio" id="completion-yes" name="completion" value="yes">
+                                <span class="custom-radio"></span>
+                                Yes
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" id="completion-no" name="completion" value="no" checked>
+                                <span class="custom-radio"></span>
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="image-column">
+                    <img src="610.webp" alt="Preview" class="preview-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="get-article-btn">Get price</button>
+
+</body>
+
+</html>
+
+<script>
+    window.onload = function () {
+        const widthInput = document.getElementById('channel-width');
+        const heightInput = document.getElementById('channel-height');
+        const lengthInput = document.getElementById('channel-length');
+        const minLabel = document.getElementById('height-min-label');
+        const maxLabel = document.getElementById('height-max-label');
+
+        const yesRadio = document.getElementById('grating-yes');
+        const noRadio = document.getElementById('grating-no');
+        const optionsDiv = document.getElementById('grating-options');
+
+        const lockingYes = document.getElementById('locking-yes');
+        const lockingNo = document.getElementById('locking-no');
+        const lockingOptions = document.getElementById('locking-options');
+
+        const gratingTypeSelect = document.getElementById('grating-type');
+        const meshSizeDiv = document.getElementById('mesh-size-wrapper');
+        const meshSurfaceDiv = document.getElementById('mesh-surface-wrapper');
+
+        const ladderSizeDiv = document.getElementById('ladder-type-wrapper');
+        const ladderSurfaceDiv = document.getElementById('ladder-surface-wrapper');
+
+        const ladderThick = document.getElementById('ladder-thickness-wrapper');
+
+        const outletYes = document.getElementById('outlet-yes');
+        const outletNo = document.getElementById('outlet-no');
+        const outletOptions = document.getElementById('outlet-options');
+
+        const outletInput = document.getElementById('outlet-count');
+        const outletPositions = document.getElementById('outlet-positions');
+
+        const outletType = document.getElementById('outlet-type');
+        const outletDirectionWrapper = document.getElementById('outlet-direction-wrapper');
+
+        const endCapSelect = document.getElementById('endCap');
+        const endCapTypeWrapper = document.getElementById('endCap-type-wrapper');
+
+        const preview = document.getElementById('preview-image');
+
+
+        function updateHeightRange() {
+            const width = parseInt(widthInput.value);
+            let max = 250;
+            const min = 60;
+
+            if (width >= 80 && width < 100) {
+                max = 150;
+            } else if (width >= 100 && width < 150) {
+                max = 200;
+            } else if (width >= 150 && width <= 300) {
+                max = 250;
+            }
+
+            heightInput.min = min;
+            heightInput.max = max;
+            minLabel.textContent = `Min: ${min}`;
+            maxLabel.textContent = `Max: ${max}`;
+
+            // Optional: Reset value if it's out of range
+            const val = parseInt(heightInput.value);
+            if (val && (val < min || val > max)) {
+                heightInput.value = max;
+            }
+        }
+
+        function toggleOptions() {
+            if (yesRadio.checked) {
+                optionsDiv.style.display = 'block';
+            } else {
+                optionsDiv.style.display = 'none';
+            }
+        }
+
+
+        function toggleLockingOptions() {
+            if (lockingYes.checked) {
+                lockingOptions.style.display = 'block';
+            } else {
+                lockingOptions.style.display = 'none';
+            }
+        }
+
+        function toggleOutletOptions() {
+            if (outletYes.checked) {
+                outletOptions.style.display = 'block';
+            } else {
+                outletOptions.style.display = 'none';
+            }
+        }
+
+
+        function toggleMeshSize() {
+            if (gratingTypeSelect.value === 'mesh') {
+                meshSizeDiv.style.display = 'flex';
+                ladderThick.style.display = 'flex';
+                meshSurfaceDiv.style.display = 'flex';
+            } else {
+                meshSizeDiv.style.display = 'none';
+                ladderThick.style.display = 'none';
+                meshSurfaceDiv.style.display = 'none';
+            }
+
+            if (gratingTypeSelect.value === 'ladder') {
+                ladderSizeDiv.style.display = 'flex';
+                ladderSurfaceDiv.style.display = 'flex';
+            } else {
+                ladderSizeDiv.style.display = 'none';
+                ladderSurfaceDiv.style.display = 'none';
+            }
+
+        }
+
+        function toggleOutletDirection() {
+            if (outletType.value === 'horizontal') {
+                outletDirectionWrapper.style.display = 'flex'; // nebo 'block' dle layoutu
+            } else {
+                outletDirectionWrapper.style.display = 'none';
+            }
+        }
+
+        outletInput.addEventListener('input', function () {
+            let count = parseInt(outletInput.value);
+            if (isNaN(count) || count < 1 || count > 6) {
+                outletPositions.innerHTML = ''; // Neplatné číslo = smaž vše
+                return;
+            }
+
+            // Vygeneruj inputy
+            outletPositions.innerHTML = ''; // Vyčisti staré
+
+            for (let i = 1; i <= count; i++) {
+                const div = document.createElement('div');
+                div.className = 'form-field filled'; // přidáme 'filled' pro správné zobrazení labelu
+
+                div.innerHTML = `
+        <input 
+            type="text" 
+            id="outlet-position-${i}" 
+            name="outlet-position-${i}" 
+            class="styled-input" 
+            required
+        >
+        <label for="outlet-position-${i}">Outlet position ${i}</label>
+    `
+
+                outletPositions.appendChild(div);
+            }
+        });
+
+        function toggleEndCapType() {
+            const value = endCapSelect.value;
+            if (value === 'left' || value === 'right' || value === 'both') {
+                endCapTypeWrapper.style.display = 'flex'; // nebo 'block' dle designu
+            } else {
+                endCapTypeWrapper.style.display = 'none';
+            }
+        }
+
+
+        function updateFilledState(el) {
+            const formField = el.closest('.form-field');
+            if (!formField) return;
+
+            if (el.value && el.value !== "") {
+                formField.classList.add('filled');
+            } else {
+                formField.classList.remove('filled');
+            }
+        }
+
+        // 💫 Najdi všechny selecty a inputy (kromě radio)
+        document.querySelectorAll('.form-field select, .form-field input[type="text"], .form-field input[type="number"]').forEach(el => {
+            updateFilledState(el); // Prvotní načtení
+            el.addEventListener('change', () => updateFilledState(el)); // Při změně
+            el.addEventListener('input', () => updateFilledState(el)); // Pro inputy
+        });
+
+        const tfSelect = document.getElementById('transport-connection');
+        const connectionTypeField = document.getElementById('connection-type-field');
+
+        tfSelect.addEventListener('change', function () {
+            if (this.value && this.value !== 'noTF') {
+                connectionTypeField.style.display = 'block';
+            } else {
+                connectionTypeField.style.display = 'none';
+            }
+        });
+
+
+
+        gratingTypeSelect.addEventListener('change', toggleMeshSize);
+        toggleMeshSize(); // pro načtení aktuálního výběru
+
+        yesRadio.addEventListener('change', toggleOptions);
+        noRadio.addEventListener('change', toggleOptions);
+        toggleOptions(); // spustit i hned při načtení
+
+
+        lockingYes.addEventListener('change', toggleLockingOptions);
+        lockingNo.addEventListener('change', toggleLockingOptions);
+        toggleLockingOptions(); // Inicializace při načtení
+
+        outletYes.addEventListener('change', toggleOutletOptions);
+        outletNo.addEventListener('change', toggleOutletOptions);
+        toggleOutletOptions(); // inicializace při načtení
+
+        outletType.addEventListener('change', toggleOutletDirection);
+        toggleOutletDirection(); // spustit při načtení
+
+        endCapSelect.addEventListener('change', toggleEndCapType);
+        toggleEndCapType(); // při načtení
+
+
+
+        widthInput.addEventListener('input', updateHeightRange);
+    };
+</script>
+
+<style>
+    /* Reset základního stylu */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Kontejner formuláře */
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        padding-top: 0px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        border: 2px dashed #bfd1df;
+        width: 1200px;
+        margin: 70px auto;
+        position: relative;
+    }
+
+    .container-title {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 0 12px;
+        font-size: 20px;
+        font-weight: 300;
+        /* lehký řez */
+        font-family: 'Stone Sans Light', 'Stone Sans', sans-serif;
+        color: #3f5c78;
+    }
+
+    /* Titulek */
+    h1 {
+        color: #3f5c78;
+        text-align: left;
+        margin-bottom: 24px;
+        font-size: 24px;
+        font-weight: lighter;
+
+    }
+
+
+    /* Label drží pevnou šířku vlevo a zarovná se doprava */
+    .form-group label {
+        font-weight: bold;
+        font-size: 14px;
+        text-align: left;
+        min-width: 150px;
+        /* Ujistíme se, že labely jsou stejně široké */
+    }
+
+    .form-field.input-range label {
+        position: absolute;
+        top: -10px;
+        left: 130px;
+        /* přizpůsob si podle potřeby */
+        background: white;
+        /* ← tady nastavíme bílé pozadí */
+        padding: 0 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #3f5c78;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+
+    .form-section {
+        border: 2px dashed #bfd1df;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 32px;
+        background-color: #ffffff;
+        /* 🤍 čistě bílé pozadí */
+        position: relative;
+    }
+
+    .form-section-title {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffffff;
+        /* 🤍 i pod textem bude bílé */
+        padding: 0 12px;
+        font-size: 18px;
+        color: #3f5c78;
+        font-weight: 500;
+        font-family: 'Stone Sans Light', 'Stone Sans', sans-serif;
+    }
+
+    /* Dvousloupcové sekce držíme pohromadě */
+    #type-container {
+        display: flex !important;
+        gap: 30px;
+    }
+
+    /* Tlačítko odeslání */
+    .get-article-btn {
+        background-color: #d0021b;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto;
+        width: fit-content;
+    }
+
+    .get-article-btn:hover {
+        background-color: #a10017;
+    }
+
+    /* BLUE*/
+
+    .form-field {
+        position: relative;
+        margin: 24px 0;
+
+    }
+
+    /* Select */
+    .form-field select {
+        width: 100%;
+        padding: 14px 44px 10px 10px;
+        font-size: 16px;
+        border: 2px solid #7d94ab;
+        border-radius: 8px;
+        background-color: white;
+        color: #1e2d4d;
+        appearance: none;
+        font-family: 'Stone Sans', sans-serif;
+    }
+
+    .form-field select:required:valid+label {
+        background-color: white;
+        color: #1e2d4d;
+    }
+
+    select option {
+        font-family: 'Stone Sans', sans-serif;
+        background-color: #eaf0f6;
+
+        /* jemná modrá */
+        color: #1e2d4d;
+    }
+
+    /* Label */
+    .form-field label {
+        position: absolute;
+        left: 16px;
+        top: 18px;
+        background: white;
+        padding: 0 4px;
+        font-size: 16px;
+        color: #3f5c78;
+        pointer-events: none;
+        transition: 0.2s ease all;
+    }
+
+    /* Label zmenšíme, když je něco vybrané */
+    .form-field select:focus+label,
+    .form-field select:valid+label {
+        top: -8px;
+        font-size: 14px;
+        color: #3f5c78;
+    }
+
+    /* Šipka */
+    .dropdown-icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 35px;
+        color: #3f5c78;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+    }
+
+    /* Když má select focus → přidáme třídu přes JS */
+    .form-field.open .dropdown-icon {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .radio-group-vertical {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin: 16px 0;
+        font-family: 'Stone Sans', sans-serif;
+        color: #1e2d4d;
+    }
+
+    .radio-group-vertical .radio-label {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    .radio-group-vertical .radio-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 24px;
+    }
+
+    .radio-options-inline {
+        display: flex;
+        gap: 24px;
+    }
+
+    .radio-option {
+        font-family: 'Stone Sans', sans-serif;
+        font-size: 20px;
+        color: #1e2d4d;
+        font-weight: normal;
+        /* nebo medium, podle zbytku designu */
+    }
+
+    .form-field {
+        position: relative;
+        width: 100%;
+        margin: 24px 0;
+        font-family: 'Stone Sans', sans-serif;
+    }
+
+    .input-floating-wrapper {
+        height: 42px;
+        display: flex;
+        border: 2px solid #3f5c78;
+        border-radius: 10px;
+        overflow: hidden;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+    }
+
+    .input-bound {
+        background-color: #3f5c78;
+        color: white;
+        width: 100px;
+        /* 💥 pevná šířka */
+        text-align: center;
+        padding: 13px 0;
+        font-size: 16px;
+        font-family: 'Stone Sans', sans-serif;
+    }
+
+    .input-floating-wrapper input {
+        height: 42px;
+        flex: 1;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        padding: 4px 8px;
+        outline: none;
+        font-family: 'Stone Sans', sans-serif;
+        color: #1e2d4d;
+        background-color: white;
+    }
+
+    .form-field.input-range label {
+        left: 130px;
+        /* nebo calc(60px + 8px) – podle šířky levého boxu */
+    }
+
+    .dropdown-icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: #3f5c78;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+    }
+
+    .form-field.open .dropdown-icon {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .radio-option input[type="radio"] {
+        appearance: none;
+        width: 22px;
+        height: 22px;
+        border: 2px solid #3f5c78;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: white;
+        margin-right: 8px;
+        transition: border 0.2s ease;
+    }
+
+    .radio-option input[type="radio"]:checked::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #3f5c78;
+    }
+
+    .radio-option {
+        font-size: 10px;
+    }
+
+    .form-field select:required:invalid+label {
+        background-color: #e9f0f6;
+        color: #3f5c78;
+    }
+
+    .form-field.filled label {
+        background-color: white;
+        color: #1e2d4d;
+    }
+
+    .form-field:not(.filled) select {
+        background-color: #e9f0f6;
+        /* i select má modré pozadí */
+    }
+
+    .form-field.filled select {
+        background-color: white;
+    }
+
+    .selects-with-image {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-top: 40px;
+        align-items: stretch;
+        /* změníme z flex-start na stretch */
+    }
+
+    .selects-column {
+        flex: 1;
+        max-width: 550px;
+        /* užší sloupec pro selecty */
+    }
+
+    .image-column {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        /* horizontální zarovnání */
+        align-items: center;
+        /* vertikální zarovnání */
+        min-height: 100%;
+        /* zajistí výšku jako .selects-column */
+    }
+
+    .preview-image {
+        max-width: 300px;
+        height: auto;
+        display: block;
+    }
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 40px;
+        background-color: #f3f6fa;
+        font-family: 'Stone Sans', sans-serif;
+        border-bottom: 2px solid #bfd1df;
+    }
+
+    .nav-logo {
+        font-family: 'Stone Sans', sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 70px;
+        /* zarovnání do středu menu */
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-logo a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .logo-red {
+        color: #d0021b;
+        /* jasně červená */
+    }
+
+    .logo-gray {
+        color: #2c3f52;
+        /* tlumená modrošedá jako zbytek designu */
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links li {
+        position: relative;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #1e2d4d;
+        font-size: 16px;
+        padding: 8px 0;
+        display: inline-block;
+    }
+
+    .nav-links a:hover {
+        color: #d0021b;
+    }
+
+    /* Submenu */
+    .has-submenu .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        border: 1px solid #bfd1df;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        min-width: 180px;
+        z-index: 10;
+        list-style: none;
+        /* 💥 odstraní tečky */
+        padding: 8px 0;
+    }
+
+    .has-submenu:hover .submenu {
+        display: block;
+    }
+
+    .submenu li {
+        padding: 8px 16px;
+    }
+
+    .submenu li a {
+        color: #1e2d4d;
+        display: block;
+        font-size: 14px;
+    }
+
+    .submenu li a:hover {
+        background-color: #f0f6fa;
+        color: #d0021b;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(63, 92, 120, 0.2);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .modal-content {
+        background: white;
+        border: 2px solid #bfd1df;
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 900px;
+        width: 90%;
+        font-family: 'Stone Sans Light', 'Stone Sans', sans-serif;
+        color: #1e2d4d;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+
+    .modal-content h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+
+    .modal-content p {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #3f5c78;
+    }
+
+    .styled-input {
+        width: 100%;
+        padding: 14px 12px;
+        font-size: 16px;
+        border: 2px solid #7d94ab;
+        border-radius: 8px;
+        background-color: white;
+        color: #1e2d4d;
+        font-family: 'Stone Sans', sans-serif;
+        outline: none;
+    }
+
+    /* Plovoucí label pro input */
+    .form-field input:focus+label,
+    .form-field input:not(:placeholder-shown)+label {
+        top: -8px;
+        font-size: 14px;
+        color: #3f5c78;
+    }
+
+    /* Pro jistotu: výchozí pozice labelu */
+    .form-field input+label {
+        position: absolute;
+        left: 16px;
+        top: 18px;
+        background: white;
+        padding: 0 4px;
+        font-size: 16px;
+        color: #3f5c78;
+        pointer-events: none;
+        transition: 0.2s ease all;
+    }
+</style>
