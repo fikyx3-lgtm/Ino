@@ -1,0 +1,583 @@
+/* Reset základního stylu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Kontejner formuláře */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 0px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 2px dashed #bfd1df;
+    width: 1200px;
+    margin: 70px auto;
+    position: relative;
+}
+
+.container-title {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 12px;
+    font-size: 20px;
+    font-weight: 300;
+    /* lehký řez */
+    font-family: 'Stone Sans Light', 'Stone Sans', sans-serif;
+    color: #3f5c78;
+}
+
+/* Titulek */
+h1 {
+    color: #3f5c78;
+    text-align: left;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: lighter;
+
+}
+
+
+/* Label drží pevnou šířku vlevo a zarovná se doprava */
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    min-width: 150px;
+    /* Ujistíme se, že labely jsou stejně široké */
+}
+
+.form-field.input-range label {
+    position: absolute;
+    top: -10px;
+    left: 130px;
+    /* přizpůsob si podle potřeby */
+    background: white;
+    /* ← tady nastavíme bílé pozadí */
+    padding: 0 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3f5c78;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+.form-section {
+    border: 2px dashed #bfd1df;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 32px;
+    background-color: #ffffff; /* 🤍 čistě bílé pozadí */
+    position: relative;
+}
+
+.form-section-title {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* 🤍 i pod textem bude bílé */
+    padding: 0 12px;
+    font-size: 18px;
+    color: #3f5c78;
+    font-weight: 500;
+    font-family: 'Stone Sans Light', 'Stone Sans', sans-serif;
+}
+
+/* Dvousloupcové sekce držíme pohromadě */
+#type-container {
+    display: flex !important;
+    gap: 30px;
+}
+
+/* Tlačítko odeslání */
+.get-article-btn {
+    background-color: #d0021b;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.get-article-btn:hover {
+    background-color: #a10017;
+}
+
+/* BLUE*/
+
+.form-field {
+    position: relative;
+    margin: 24px 0;
+
+}
+
+/* Select */
+.form-field select {
+    width: 100%;
+    padding: 14px 44px 10px 10px;
+    font-size: 16px;
+    border: 2px solid #7d94ab;
+    border-radius: 8px;
+    background-color: white;
+    color: #1e2d4d;
+    appearance: none;
+    font-family: 'Stone Sans', sans-serif;
+}
+
+.form-field select:required:valid+label {
+    background-color: white;
+    color: #1e2d4d;
+}
+
+select option {
+    font-family: 'Stone Sans', sans-serif;
+    background-color: #eaf0f6;
+
+    /* jemná modrá */
+    color: #1e2d4d;
+}
+
+/* Label */
+.form-field label {
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    background: white;
+    padding: 0 4px;
+    font-size: 16px;
+    color: #3f5c78;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+/* Label zmenšíme, když je něco vybrané */
+.form-field select:focus+label,
+.form-field select:valid+label {
+    top: -8px;
+    font-size: 14px;
+    color: #3f5c78;
+}
+
+/* Šipka */
+.dropdown-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    color: #3f5c78;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+/* Když má select focus → přidáme třídu přes JS */
+.form-field.open .dropdown-icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.radio-group-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 16px 0;
+    font-family: 'Stone Sans', sans-serif;
+    color: #1e2d4d;
+}
+
+.radio-group-vertical .radio-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.radio-group-vertical .radio-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 24px;
+}
+
+.radio-options-inline {
+    display: flex;
+    gap: 24px;
+}
+
+.radio-option {
+    font-family: 'Stone Sans', sans-serif;
+    font-size: 20px;
+    color: #1e2d4d;
+    font-weight: normal;
+    /* nebo medium, podle zbytku designu */
+}
+
+.form-field {
+    position: relative;
+    width: 100%;
+    margin: 24px 0;
+    font-family: 'Stone Sans', sans-serif;
+}
+
+.input-floating-wrapper {
+    height: 42px;
+    display: flex;
+    border: 2px solid #3f5c78;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+}
+
+.input-bound {
+    background-color: #3f5c78;
+    color: white;
+    width: 100px;
+    /* 💥 pevná šířka */
+    text-align: center;
+    padding: 13px 0;
+    font-size: 16px;
+    font-family: 'Stone Sans', sans-serif;
+}
+
+.input-floating-wrapper input {
+    height: 42px;
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    padding: 4px 8px;
+    outline: none;
+    font-family: 'Stone Sans', sans-serif;
+    color: #1e2d4d;
+    background-color: white;
+}
+
+.form-field.input-range label {
+    left: 130px;
+    /* nebo calc(60px + 8px) – podle šířky levého boxu */
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #3f5c78;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.form-field.open .dropdown-icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.radio-option input[type="radio"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #3f5c78;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
+    margin-right: 8px;
+    transition: border 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #3f5c78;
+}
+
+.radio-option {
+    font-size: 10px;
+}
+
+.form-field select:required:invalid+label {
+    background-color: #e9f0f6;
+    color: #3f5c78;
+}
+
+.form-field.filled label {
+    background-color: white;
+    color: #1e2d4d;
+}
+
+.form-field:not(.filled) select {
+    background-color: #e9f0f6;
+    /* i select má modré pozadí */
+}
+
+.form-field.filled select {
+    background-color: white;
+}
+
+.selects-with-image {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: stretch;
+    /* změníme z flex-start na stretch */
+}
+
+.selects-column {
+    flex: 1;
+    max-width: 550px;
+    /* užší sloupec pro selecty */
+}
+
+.image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* horizontální zarovnání */
+    align-items: center;
+    /* vertikální zarovnání */
+    min-height: 100%;
+    /* zajistí výšku jako .selects-column */
+}
+
+.image-svg-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* horizontální zarovnání */
+    align-items: center;
+    /* vertikální zarovnání */
+    min-height: 100%;
+    /* zajistí výšku jako .selects-column */
+}
+
+.preview-image {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border: none;
+}
+
+.preview-svg-image {
+    max-width: 500px;
+    height: auto;
+    display: block;
+    border: none;
+}
+
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+    background-color: #f3f6fa;
+    font-family: 'Stone Sans', sans-serif;
+    border-bottom: 2px solid #bfd1df;
+}
+
+.nav-logo {
+    font-family: 'Stone Sans', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 70px; /* zarovnání do středu menu */
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-red {
+    color: #d0021b; /* jasně červená */
+}
+
+.logo-gray {
+    color: #2c3f52; /* tlumená modrošedá jako zbytek designu */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1e2d4d;
+    font-size: 16px;
+    padding: 8px 0;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: #d0021b;
+}
+
+/* Submenu */
+.has-submenu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #bfd1df;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 10;
+  list-style: none; /* 💥 odstraní tečky */
+  padding: 8px 0;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 16px;
+}
+
+.submenu li a {
+  color: #1e2d4d;
+  display: block;
+  font-size: 14px;
+}
+
+.submenu li a:hover {
+  background-color: #f0f6fa;
+  color: #d0021b;
+}
+
+.modal-overlay {
+     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 92, 120, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    border: 2px solid #bfd1df;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 900px;
+    width: 90%;
+    font-family: 'Stone Sans Light', 'Stone Sans', sans-serif;
+    color: #1e2d4d;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    height: 600px;
+    
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.modal-content p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.close-modal {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #3f5c78;
+}
+
+.styled-input {
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 16px;
+    border: 2px solid #7d94ab;
+    border-radius: 8px;
+    background-color: white;
+    color: #1e2d4d;
+    font-family: 'Stone Sans', sans-serif;
+    outline: none;
+}
+
+/* Plovoucí label pro input */
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 14px;
+    color: #3f5c78;
+}
+
+/* Pro jistotu: výchozí pozice labelu */
+.form-field input + label {
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    background: white;
+    padding: 0 4px;
+    font-size: 16px;
+    color: #3f5c78;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+canvas#flowChart {
+    width: 100% !important;
+    max-width: 800px;
+    height: 400px !important;
+    margin: 20px auto;
+    display: block;
+}
