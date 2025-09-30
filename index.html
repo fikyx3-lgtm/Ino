@@ -85,14 +85,14 @@
                         </div>
                     </div>
 
-                    <div class="form-field input-range">
-                        <label for="channel-height">Channel height [mm]</label>
-                        <div class="input-floating-wrapper">
-                            <div class="input-bound">60</div>
-                            <input type="number" id="channel-height" min="60" max="250">
-                            <div class="input-bound">250</div>
-                        </div>
-                    </div>
+                   <div class="form-field input-range">
+  <label for="channel-height">Channel height [mm]</label>
+  <div class="input-floating-wrapper">
+    <div id="height-min-label" class="input-bound">60</div>
+    <input type="number" id="channel-height" min="60" max="250">
+    <div id="height-max-label" class="input-bound">250</div>
+  </div>
+</div>
 
                     <div class="form-field">
                         <select id="Height" required>
@@ -1166,3 +1166,4 @@
         transition: 0.2s ease all;
     }
 </style>
+
